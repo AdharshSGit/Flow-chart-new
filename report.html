@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset=utf-8 />
+        <link rel="stylesheet" href="report.css" type="text/css"/>
+        
+        <title>
+            Academic Report form 
+        </title>
+    </header>
+    <body>
+            <h1>BRIGHT ANGELS SCHOOL</h1>
+            <h2>STUDENT ACADEMIC REPORT FORM</h2>
+            <section class="data">
+            <label>Student ID</label>
+            <input type="number" placeholder="Enter the ID" id="ID"><br>
+            <label>GRADE</label>
+            <select name="Grade" id="grade">
+                <option value="Select">Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select><br>
+            <form id=div >
+                <label  >Division</label>
+                <input type="radio" class="att"  name="div">A</input>
+                <input type="radio" class="att" name="div">B</input>
+                <input type="radio" class="att" name="div">C</input>
+                <input type="radio" class="att" name="div">D</input>
+            </form><br>
+            <h3>ENTER THE SUBJECT SCORE</h3><br>
+            <label class="sub">ENGLISH</label>
+            <input type="number" id="english" placeholder=""><br></input>
+            <label class="sub">MATHEMATICS</label>
+            <input type="number" id="maths" placeholder=""><br></input>
+            <label class="sub">SCIENCE</label>
+            <input type="number" id="science" placeholder=""><br></input>
+            <label class="sub">SOCIAL STUDIES</label>
+            <input type="number" id="social" placeholder=""><br></input>
+            <input type="button" id="button1" value="SUBMIT" onclick = "Add_element_in_array();"></input>
+            <input type="button" id="button2" value="DISPLAY" onclick="display();"></input>
+            <div id="Result"></div>            
+        </section>
+        <script src="report.js"></script> 
+    </body>
+</html>
