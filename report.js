@@ -1,15 +1,24 @@
-
-var no_of_sub = 4;
-var grade = new Array;
-var sum = 0; var english = 0; var maths = 0; var science = 0; var social = 0;
+var stuID = 0;
+var div=0;
+var grade = new Array();
+var sum = 0;
+var english = 0; 
+var maths = 0; 
+var science = 0; 
+var social = 0;
 var average = 0;
+var x = 0;
 var pass = new Array(13).fill(0);
 var fail = new Array(13).fill(0);
 var no_of_stud = new Array(13).fill(0);
+var totalpass = 0;
+var totalfail = 0;
+var totalstudents = 0;
+var totalpasspercent = 0;
+var passpercent =new Array(13).fill(0);
 
 function Add_element_in_array()
 {
-    
     stuID = parseInt(document.getElementById("ID").value,10);
     grade[x] = parseInt(document.getElementById("grade").value,10);
     div = parseInt(document.getElementsByName("div").value,10);
@@ -17,7 +26,7 @@ function Add_element_in_array()
     maths = parseInt(document.getElementById("maths").value,10);
     science = parseInt(document.getElementById("science").value,10);
     social = parseInt(document.getElementById("social").value,10);
-    
+   
    if(isNaN(stuID)){
        alert("Enter the Student ID ");
    }
@@ -45,7 +54,80 @@ function Add_element_in_array()
     {
         evaluate();
     }
+    x++;
 }
+ 
+
+function evaluate()
+{
+    
+    sum = english+maths+science+social;
+    average = sum / 4;
+    
+    if (average >= 60) {
+        pass[grade[x]]++;
+        no_of_stud[grade[x]]++;
+        totalpass++;
+        totalstudents++;
+        alert(totalpass);
+
+    }
+    else {
+        fail[grade[x]]++;
+        no_of_stud[grade[x]]++;
+        totalfail++;
+        totalstudents++;
+    }
+
+    totalpasspercent = ((totalpass / totalstudents) * 100).toFixed(2);
+    passpercent[grade[x]] = ((pass[grade[x]] / no_of_stud[grade[x]]) * 100).toFixed(2);
+    clear_complete();
+}
+    
+function display()
+{
+    var myTable = "<h1>Final Results</h1>";
+    myTable += "<table border='5'><tr><td style='width: 100px; text-align: center;'>Grades</td>";
+    myTable += "<td style='width: 100px; text-align: center;'>No of students</td>";
+    myTable += "<td style='width: 100px; text-align: center;'>Pass</td>";
+    myTable += "<td style='width: 100px; text-align: center;'>Fail</td>";
+    myTable += "<td style='width: 100px; text-align: center;'>Average</td></tr>";
+
+
+
+
+    for (var i = 1; i <= 12; i++) {
+
+        myTable += "<tr><td style='width: 100px; text-align:center;'>" + i + "</td>";
+        myTable += "<td style='width: 100px; text-align: center;'>" + no_of_stud[i] + "</td>";
+        myTable += "<td style='width: 100px; text-align: center;'>" + pass[i] + "</td>";
+        myTable += "<td style='width: 100px; text-align: center;'>" + fail[i] + "</td>";
+        myTable += "<td style='width: 100px; text-align: center;'>" + passpercent[i] + "</td></tr>";
+
+    }
+    
+    
+    myTable += "<tr><td style='width: 100px; text-align:center;'>" + "ALL" + "</td>";
+    myTable += "<td style='width: 100px; text-align: center;'>" + totalstudents + "</td>";
+    myTable += "<td style='width: 100px; text-align: center;'>" + totalpass + "</td>";
+    myTable += "<td style='width: 100px; text-align: center;'>" + totalfail + "</td>";
+    myTable += "<td style='width: 100px; text-align: center;'>" + totalpasspercent + "</td></tr>";
+    myTable += "</table>";
+
+    
+    if(totalstudents==0)
+    {
+        
+        totalpasspercent=0;
+    myTable += "<h3>Total Pass percentage:" + totalpasspercent + "</h3>";
+    }
+    else{
+        myTable += "<h3>Total Pass percentage:" + totalpasspercent + "</h3>";  
+    }
+
+    document.getElementById("Result").innerHTML = myTable; 
+}
+
 function clear_complete()
 {
     document.getElementById("ID").value="";
@@ -64,42 +146,9 @@ function clear_marks()
     document.getElementById("social").value="";    
 }
 
-function evaluate()
-{
-    alert("Marks Entered...");
-    sum=english+maths+science+social;
-    average=sum/no_of_sub;
-    var x = 0;
-    if(average>=60)
-    {
-        pass[grade[x]]++;
-        no_of_stud[x]++;
-    }
-    else
-    {
-        fail[grade[x]]++;
-        no_of_stud[grade[x]]++;
-    }
-    x++;
-    clear_complete();
-}
-var entry=document.getElementById("button2");
-entry.addEventListener("click",display());
-function display()
-{
-    var row=1;
-    var avg = 0;
-    for(var i=1;i<=12;i++)
-    {
-        if(no_of_stud[i] !=0)
-        {
-            avg=(pass[i]/no_of_stud[i]);
-        }
-        else
-        {
-            avg=0.0;
-        }
-        var table = document.getElementById("table");
+
+
+/*var table = document.getElementById("table");
         var newRow = table.insertRow(row);
         var cell1 = newRow.insertCell(0);
         var cell2 = newRow.insertCell(1);
@@ -113,6 +162,13 @@ function display()
         celll4.innerHTML= fail[i];
         cell5.innerHTML= avg[i];
         row++;
-    }
-    
-}
+
+        <table id="table">
+                <tr>
+                    <th>GRADE</th>
+                    <th>No.of.Students</th>
+                    <th>Pass Students</th>
+                    <th>Fail Students</th>
+                    <th>Average</th>
+                </tr>
+            </table>    */
