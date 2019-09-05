@@ -86,4 +86,13 @@ h3{
     margin-left: 80px;
     font-weight: bolder;
 }
-
+#table,th,td
+{
+    margin-top: 80px;
+    padding: 5px;
+    
+}
+th{
+    border: 1px solid black;
+    font-size: 17px;
+}
