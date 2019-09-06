@@ -60,7 +60,7 @@ function Add_element_in_array()
 
 function evaluate()
 {
-    
+    alert("Marks Entered..!");
     sum = english+maths+science+social;
     average = sum / 4;
     
@@ -69,7 +69,7 @@ function evaluate()
         no_of_stud[grade[x]]++;
         totalpass++;
         totalstudents++;
-        alert(totalpass);
+        
 
     }
     else {
@@ -78,20 +78,19 @@ function evaluate()
         totalfail++;
         totalstudents++;
     }
-
-    totalpasspercent = ((totalpass / totalstudents) * 100).toFixed(2);
     passpercent[grade[x]] = ((pass[grade[x]] / no_of_stud[grade[x]]) * 100).toFixed(2);
+    totalpasspercent = ((totalpass / totalstudents) * 100).toFixed(2);
+    
     clear_complete();
 }
-    
 function display()
 {
-    var myTable = "<h1>Final Results</h1>";
-    myTable += "<table border='5'><tr><td style='width: 100px; text-align: center;'>Grades</td>";
-    myTable += "<td style='width: 100px; text-align: center;'>No of students</td>";
-    myTable += "<td style='width: 100px; text-align: center;'>Pass</td>";
-    myTable += "<td style='width: 100px; text-align: center;'>Fail</td>";
-    myTable += "<td style='width: 100px; text-align: center;'>Average</td></tr>";
+    var myTable = "<h1>Academic Final Report <hr></h1>";
+    myTable += "<table ><tr><td style='width: 100px; text-align: center; font-weight: bolder;'>Grades<hr></td>";
+    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder;'>No of students<hr></td>";
+    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder;'>Pass_Students<hr></td>";
+    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder;'>Fail_Students<hr></td>";
+    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder;'>Average<hr></td></tr>";
 
 
 
@@ -107,23 +106,12 @@ function display()
     }
     
     
-    myTable += "<tr><td style='width: 100px; text-align:center;'>" + "ALL" + "</td>";
-    myTable += "<td style='width: 100px; text-align: center;'>" + totalstudents + "</td>";
-    myTable += "<td style='width: 100px; text-align: center;'>" + totalpass + "</td>";
-    myTable += "<td style='width: 100px; text-align: center;'>" + totalfail + "</td>";
-    myTable += "<td style='width: 100px; text-align: center;'>" + totalpasspercent + "</td></tr>";
+    myTable += "<tr><td style='width: 100px; text-align:center;font-weight: bolder;'>" + "ALL" + "</td>";
+    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalstudents + "</td>";
+    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalpass + "</td>";
+    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalfail + "</td>";
+    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalpasspercent + "</td></tr>";
     myTable += "</table>";
-
-    
-    if(totalstudents==0)
-    {
-        
-        totalpasspercent=0;
-    myTable += "<h3>Total Pass percentage:" + totalpasspercent + "</h3>";
-    }
-    else{
-        myTable += "<h3>Total Pass percentage:" + totalpasspercent + "</h3>";  
-    }
 
     document.getElementById("Result").innerHTML = myTable; 
 }
@@ -148,27 +136,3 @@ function clear_marks()
 
 
 
-/*var table = document.getElementById("table");
-        var newRow = table.insertRow(row);
-        var cell1 = newRow.insertCell(0);
-        var cell2 = newRow.insertCell(1);
-        var cell3 = newRow.insertCell(2);
-        var cell4 = newRow.insertCell(3);
-        var cell5 = newRow.insertCell(4);
-
-        cell1.innerHTML= grade[i];
-        cell2.innerHTML= no_of_stud[i];
-        cell3.innerHTML= pass[i];
-        celll4.innerHTML= fail[i];
-        cell5.innerHTML= avg[i];
-        row++;
-
-        <table id="table">
-                <tr>
-                    <th>GRADE</th>
-                    <th>No.of.Students</th>
-                    <th>Pass Students</th>
-                    <th>Fail Students</th>
-                    <th>Average</th>
-                </tr>
-            </table>    */
