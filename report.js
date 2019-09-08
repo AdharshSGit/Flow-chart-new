@@ -85,35 +85,35 @@ function evaluate()
 }
 function display()
 {
-    var myTable = "<h1>Academic Final Report <hr></h1>";
-    myTable += "<table ><tr><td style='width: 100px; text-align: center; font-weight: bolder;'>Grades<hr></td>";
-    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder;'>No of students<hr></td>";
-    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder;'>Pass_Students<hr></td>";
-    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder;'>Fail_Students<hr></td>";
-    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder;'>Average<hr></td></tr>";
+    var Table = "<h1>Academic Final Report <hr></h1>";
+    Table += "<table ><tr><td style='width: 100px; text-align: center; font-weight: bolder;'>Grades<hr></td>";
+    Table += "<td style='width: 100px; text-align: center;font-weight: bolder;'>No of students<hr></td>";
+    Table += "<td style='width: 100px; text-align: center;font-weight: bolder;'>Pass_Students<hr></td>";
+    Table += "<td style='width: 100px; text-align: center;font-weight: bolder;'>Fail_Students<hr></td>";
+    Table += "<td style='width: 100px; text-align: center;font-weight: bolder;'>Average<hr></td></tr>";
 
 
 
 
     for (var i = 1; i <= 12; i++) {
 
-        myTable += "<tr><td style='width: 100px; text-align:center;'>" + i + "</td>";
-        myTable += "<td style='width: 100px; text-align: center;'>" + no_of_stud[i] + "</td>";
-        myTable += "<td style='width: 100px; text-align: center;'>" + pass[i] + "</td>";
-        myTable += "<td style='width: 100px; text-align: center;'>" + fail[i] + "</td>";
-        myTable += "<td style='width: 100px; text-align: center;'>" + passpercent[i] + "</td></tr>";
+       Table += "<tr><td style='width: 100px; text-align:center;'>" + i + "</td>";
+       Table += "<td style='width: 100px; text-align: center;'>" + no_of_stud[i] + "</td>";
+       Table += "<td style='width: 100px; text-align: center;'>" + pass[i] + "</td>";
+       Table += "<td style='width: 100px; text-align: center;'>" + fail[i] + "</td>";
+       Table += "<td style='width: 100px; text-align: center;'>" + passpercent[i] + "</td></tr>";
 
     }
     
     
-    myTable += "<tr><td style='width: 100px; text-align:center;font-weight: bolder;'>" + "ALL" + "</td>";
-    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalstudents + "</td>";
-    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalpass + "</td>";
-    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalfail + "</td>";
-    myTable += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalpasspercent + "</td></tr>";
-    myTable += "</table>";
+    Table += "<tr><td style='width: 100px; text-align:center;font-weight: bolder;'>" + "ALL" + "</td>";
+    Table += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalstudents + "</td>";
+    Table += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalpass + "</td>";
+    Table += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalfail + "</td>";
+    Table += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalpasspercent + "</td></tr>";
+    Table += "</table>";
 
-    document.getElementById("Result").innerHTML = myTable; 
+    document.getElementById("Result").innerHTML = Table; 
 }
 
 function clear_complete()
