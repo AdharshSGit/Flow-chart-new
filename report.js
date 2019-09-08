@@ -69,8 +69,6 @@ function evaluate()
         no_of_stud[grade[x]]++;
         totalpass++;
         totalstudents++;
-        
-
     }
     else {
         fail[grade[x]]++;
