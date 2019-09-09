@@ -83,14 +83,12 @@ function evaluate()
 }
 function display()
 {
-    var Table = "<h1>Academic Final Report <hr></h1>";
-    Table += "<table ><tr><td style='width: 100px; text-align: center; font-weight: bolder;'>Grades<hr></td>";
-    Table += "<td style='width: 100px; text-align: center;font-weight: bolder;'>No of students<hr></td>";
-    Table += "<td style='width: 100px; text-align: center;font-weight: bolder;'>Pass_Students<hr></td>";
-    Table += "<td style='width: 100px; text-align: center;font-weight: bolder;'>Fail_Students<hr></td>";
-    Table += "<td style='width: 100px; text-align: center;font-weight: bolder;'>Average<hr></td></tr>";
-
-
+    var Table = "<h1><br>Academic Final Report<br><br><hr></h1>";
+    Table += "<table ><tr><td style= 'width: 100px; height: 30px; text-align: center; font-weight: bolder;'>Grades<hr></td>";
+    Table += "<td style='width: 100px; height: 30px; text-align: center;font-weight: bolder;'>No of students<hr></td>";
+    Table += "<td style='width: 100px; height: 30px; text-align: center;font-weight: bolder;'>Pass_Students<hr></td>";
+    Table += "<td style='width: 100px; height: 30px; text-align: center;font-weight: bolder;'>Fail_Students<hr></td>";
+    Table += "<td style='width: 100px; height: 30px; text-align: center;font-weight: bolder;'>Average<hr></td></tr>";
 
 
     for (var i = 1; i <= 12; i++) {
@@ -104,11 +102,11 @@ function display()
     }
     
     
-    Table += "<tr><td style='width: 100px; text-align:center;font-weight: bolder;'>" + "ALL" + "</td>";
-    Table += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalstudents + "</td>";
-    Table += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalpass + "</td>";
-    Table += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalfail + "</td>";
-    Table += "<td style='width: 100px; text-align: center;font-weight: bolder'>" + totalpasspercent + "</td></tr>";
+    Table += "<tr><td style='width: 100px;height: 30px; text-align:center;font-weight: bolder;background: lightslategray;'>" + "ALL" + "</td>";
+    Table += "<td style='width: 100px; height: 30px;text-align: center;font-weight: bolder;background: lightslategray;'>" + totalstudents + "</td>";
+    Table += "<td style='width: 100px; height: 30px;text-align: center;font-weight: bolder;background: lightslategray;'>" + totalpass + "</td>";
+    Table += "<td style='width: 100px; height: 30px;text-align: center;font-weight: bolder;background: lightslategray;'>" + totalfail + "</td>";
+    Table += "<td style='width: 100px; height: 30px;text-align: center;font-weight: bolder;background: lightslategray;'>" + totalpasspercent + "</td></tr>";
     Table += "</table>";
 
     document.getElementById("Result").innerHTML = Table; 
